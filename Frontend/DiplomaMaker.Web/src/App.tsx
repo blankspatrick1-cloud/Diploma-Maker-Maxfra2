@@ -22,6 +22,7 @@ import { useUser } from "@clerk/clerk-react";
 import SignInPage from "./pages/LoginPortal/sign-in";
 import { getToken } from "./util/apiUtil";
 import { generatePreviewImages } from "./util/previewImageUtil";
+import { DigitalClock } from "./components/DigitalClock/DigitalClock";
 
 export default function App() {
   const [tracks, setTracks] = useState<TrackResponse[] | null>(null);
@@ -208,6 +209,7 @@ export default function App() {
         minHeight: "100vh",
       }}>
       {isSignedIn && <NavBar />}
+      {isSignedIn && <DigitalClock />}
       <Routes>
         {isSignedIn != undefined &&
           <>
